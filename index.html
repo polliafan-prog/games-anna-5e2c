@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ваш набор логоигр</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBF4EA; --card:#FFFFFF; --ink:#1E2A8A; --ink-soft:#5A63A8;
+  --accent:#2F3FD0; --accent-ink:#FFFFFF; --line:#EADFCF; --chip:#F3EADC; --ok:#2E8B57;
+  --gift:#E8590C;
+  --shadow:0 1px 0 rgba(30,42,138,.04),0 10px 30px -18px rgba(30,42,138,.35);
+  --display:"Forum","Times New Roman",serif;
+  --body:"Montserrat","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#141833; --card:#1D2246; --ink:#EEF0FF; --ink-soft:#A9B0E6; --accent:#7C8BFF; --accent-ink:#0E1230;
+  --line:#2C3263; --chip:#262C5A; --ok:#6BD39A; --shadow:0 10px 30px -18px rgba(0,0,0,.7);
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:clamp(16px,4vw,48px)}
+.wrap{max-width:1180px;margin:0 auto;padding-bottom:56px}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:.01em}
+.label{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+
+/* header */
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:46px;height:46px;border-radius:50% 50% 50% 14px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--display);font-size:24px}
+.brand-name{font-family:var(--display);font-size:22px;line-height:1.05}
+.brand-name small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);text-transform:uppercase}
+.tg-btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--accent);border-radius:999px;padding:8px 16px;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;box-shadow:0 3px 0 var(--accent);text-decoration:none}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:end;padding-block:28px 34px}
+.hero h1{font-size:clamp(38px,6vw,72px);line-height:.98}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{max-width:46ch;color:var(--ink-soft);margin:16px 0 0}
+.hero-side{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.facts{display:flex;gap:10px;flex-wrap:wrap}
+.fact{background:var(--chip);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:500}
+.blob{background:var(--accent);color:var(--accent-ink);border-radius:50%;padding:22px 40px;transform:rotate(-6deg);font-family:var(--display);font-size:clamp(26px,3.4vw,38px);line-height:.95;text-align:center;text-transform:uppercase}
+.blob small{display:block;font-family:var(--body);font-size:11px;letter-spacing:.09em;font-weight:600;margin-top:6px;text-transform:uppercase}
+
+/* deadline */
+.deadline{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--card);border-radius:28px;padding:16px 22px;box-shadow:var(--shadow);margin-bottom:8px}
+.deadline .clock{flex:none;width:46px;height:46px;border-radius:50%;background:var(--chip);display:grid;place-items:center;font-size:22px}
+.deadline p{margin:0;flex:1;min-width:220px}
+.deadline b{font-weight:700}
+.days{font-family:var(--display);font-size:34px;line-height:1;color:var(--accent);white-space:nowrap}
+.days small{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-left:6px}
+
+/* sections */
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:44px 0 6px}
+.sec-head h2{font-size:clamp(28px,3.4vw,38px);line-height:1}
+.sec-note{color:var(--ink-soft);margin:0 0 18px;font-size:14px}
+
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,30px)}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:34px;padding:14px 14px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px;min-width:0;transition:transform .18s ease, box-shadow .18s ease}
+@media (hover:hover){.card:hover{transform:translateY(-3px);box-shadow:0 1px 0 rgba(30,42,138,.04),0 18px 34px -20px rgba(30,42,138,.45)}.card:hover .cover img{transform:scale(1.03)}}
+.cover{position:relative;border-radius:24px;aspect-ratio:4/3;overflow:hidden;background:var(--chip)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.badges{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.badge{background:var(--card);color:var(--ink);border-radius:99px;padding:3px 10px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.badge.gift{background:var(--gift);color:#fff}
+.card-body{padding-inline:6px}
+.card-body h3{font-family:var(--body);font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.3}
+.card-body .sub{font-size:13px;color:var(--ink-soft);margin-top:4px}
+.card-foot{padding-inline:6px;margin-top:auto}
+.linkrow{display:flex;align-items:center;gap:6px;margin-top:10px;background:var(--chip);border-radius:999px;padding:4px 4px 4px 14px}
+.linktxt{flex:1;min-width:0;border:0;background:transparent;color:var(--ink-soft);font:inherit;font-size:12px;text-overflow:ellipsis;outline:none}
+.copy{flex:none;border:0;border-radius:999px;background:var(--card);color:var(--accent);font:inherit;font-size:12px;font-weight:600;padding:7px 12px;cursor:pointer}
+.copy.done{background:var(--ok);color:#fff}
+.fmsg{font-size:12px;color:var(--ink-soft);margin-top:8px;text-align:center}
+.fmsg a{color:var(--accent);font-weight:600}
+button.act{cursor:pointer}
+.fmt{display:inline-block;margin-top:10px;background:var(--chip);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--ink)}
+.act{width:100%;border:0;border-radius:999px;min-height:42px;padding:10px 15px;font:inherit;font-size:13px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;letter-spacing:.03em}
+.act.play{background:var(--accent);color:var(--accent-ink)}
+.act.dl{background:var(--ok);color:#fff}
+.act:hover{filter:brightness(1.08)}
+.act.off{background:var(--chip);color:var(--ink-soft);pointer-events:none}
+
+.all{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--card);border-radius:28px;padding:16px 22px;box-shadow:var(--shadow);margin-top:22px}
+.all p{margin:0;flex:1;min-width:200px}
+.all .act{width:auto;padding-inline:22px}
+
+/* expired */
+.expired{display:none;text-align:center;background:var(--card);border-radius:34px;padding:44px 24px;box-shadow:var(--shadow);margin-top:10px}
+.expired h2{font-size:clamp(30px,4vw,44px);margin-bottom:10px}
+.expired p{color:var(--ink-soft);max-width:46ch;margin:0 auto 20px}
+body.is-expired .content{display:none}
+body.is-expired .expired{display:block}
+
+footer{margin-top:56px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--card);border-radius:34px;padding:26px 28px;box-shadow:var(--shadow)}
+footer h3{font-size:30px;line-height:1}
+footer p{margin:6px 0 0;color:var(--ink-soft)}
+footer .act{width:auto;padding-inline:22px}
+@media (max-width:560px){footer{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">
+      <div class="brand-mark">Л</div>
+      <div class="brand-name">Логоигры<small>@polliafania</small></div>
+    </div>
+    <a class="tg-btn" href="https://t.me/polliafan" target="_blank" rel="noopener">Написать Полине</a>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="label" style="color:var(--ink-soft)">Персональный набор</div>
+      <h1 style="margin-top:12px">Анна, ваши <em>логоигры</em></h1>
+      <p>Здесь собраны все игры из вашего заказа: онлайн-игры по ссылкам и игры в PowerPoint файлами.</p>
+    </div>
+    <div class="hero-side">
+      <div class="blob"><span id="cnt">17</span> игр<small>3 в подарок</small></div>
+      <div class="facts">
+        <span class="fact" id="cntOnline">8 ссылок</span>
+        <span class="fact" id="cntFiles">9 файлов</span>
+        <span class="fact">♾ Доступ бессрочный</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+    <div class="deadline">
+      <div class="clock">⏳</div>
+      <p>Эта страница открыта <b>до <span id="until">17 декабря</span></b>, успейте скачать файлы и сохранить ссылки на онлайн-игры. Сами игры остаются у вас навсегда: <b>доступ к ним бессрочный</b>.</p>
+      <div class="days"><span id="left">30</span><small id="leftWord">дней</small></div>
+    </div>
+
+    <div class="sec-head"><h2>Онлайн-игры</h2><span class="label" style="color:var(--ink-soft)">в браузере</span></div>
+    <p class="sec-note">🔗 Каждая игра открывается по ссылке в браузере на компьютере, планшете или телефоне. Ничего устанавливать не нужно.</p>
+    <div class="grid" id="online"></div>
+
+    <div class="sec-head"><h2>Игры в PowerPoint</h2><span class="label" style="color:var(--ink-soft)">файлы</span></div>
+    <p class="sec-note">📎 Каждая игра — отдельный файл PowerPoint. Скачайте его и откройте двойным щелчком, игра сразу запустится в режиме показа. «Диагностику с Йодой» я пришлю в Telegram: файл очень большой.</p>
+    <div class="grid" id="files"></div>
+    <div class="all" id="allbox">
+      <p><b>Все файлы одной папкой</b>, если удобнее скачать сразу всё.</p>
+      <a class="act dl" id="allbtn" href="#" target="_blank" rel="noopener">⬇ Открыть папку</a>
+    </div>
+  </div>
+
+  <div class="expired">
+    <h2>Страница закрыта</h2>
+    <p>Игры остаются вашими навсегда, доступ к ним бессрочный. Если вы не успели что-то скачать или потеряли ссылку, напишите мне, я пришлю ещё раз.</p>
+    <a class="act play" style="width:auto;padding-inline:24px" href="https://t.me/polliafan" target="_blank" rel="noopener">Написать в Telegram</a>
+  </div>
+
+  <footer>
+    <div>
+      <h3>Полина Афанасьева</h3>
+      <p>Учитель-логопед, автор игр. Если появятся вопросы по играм, пишите, всегда помогу!</p>
+    </div>
+    <a class="act play" href="https://t.me/polliafan" target="_blank" rel="noopener">✈ @polliafan</a>
+  </footer>
+</div>
+
+<script>
+/* ====== НАСТРОЙКИ ====== */
+const UNTIL = '2026-12-17T23:59:59+07:00';   // до какого момента доступны ссылки
+const ALL_FILES_FOLDER = '';                    // ссылка на папку со всеми файлами (необязательно)
+
+/* Ссылки на игры: вписать в link: '' */
+const ONLINE = [
+  {t:'Планета слов',            s:'Слоговая структура слова, 1–3 тип', img:'planet', gift:true, link:'https://polliafan-prog.github.io/planeta-slov-1-2-3-sss/'},
+  {t:'Грибная пещера',          s:'Автоматизация Р в словах',    img:'cave',   link:'https://polliafan-prog.github.io/r-v-slovah-gribnaya-pehera/'},
+  {t:'Мишка и северное сияние', s:'Автоматизация Ш в словах',    img:'snow',   gift:true, link:'https://polliafan-prog.github.io/mishka-na-severe-sh/'},
+  {t:'Лагерь на Лесном озере',  s:'Автоматизация Л в связной речи', img:'lake', link:'https://polliafan-prog.github.io/L-svyaznaya-na-ozere/'},
+  {t:'Ферма: беги и собирай',   s:'Артикуляционная гимнастика',  img:'farm',   link:'https://polliafan-prog.github.io/ag-ferma-gonki/'},
+  {t:'Лабиринт с Пегасом',      s:'Артикуляционная гимнастика',  img:'pegas',  link:'https://polliafan-prog.github.io/labirint-pegas-ag/'},
+  {t:'Гонки по трассе',         s:'Артикуляционная гимнастика',  img:'race',   link:'https://polliafan-prog.github.io/labirint-gonki/'},
+  {t:'Фея и капли дождя',       s:'Артикуляционная гимнастика',  img:'feya',   gift:true, link:'https://view.genially.com/67ff8f2de8ab476136ea1cdd'},
+];
+const FILES = [
+  {t:'Диагностика с Йодой', s:'Комплексное обследование речи', img:'diag',      tg:true},
+  {t:'Предлоги',            s:'на, за, перед, в, под',         img:'predlogi',  link:'predlogi-91cb95.ppsx'},
+  {t:'Яблоневый сад',       s:'Автоматизация Ш в слогах',      img:'sad',       link:'yablonevy-sad-f04b8e.ppsx'},
+  {t:'Концерт',             s:'Автоматизация Л в слогах',      img:'koncert',   link:'koncert-3f4baf.ppsx'},
+  {t:'Снеговик Сэм',        s:'Автоматизация звука С',         img:'snegovik',  link:'snegovik-sem-618047.ppsx'},
+  {t:'Йети Волли',          s:'Артикуляционная гимнастика',    img:'yeti',      link:'yeti-volli-7029c4.pptx'},
+  {t:'Подводный мир',       s:'Артикуляционная гимнастика',    img:'more',      link:'podvodny-mir-a58057.ppsx'},
+  {t:'Пещера самоцветов',   s:'Артикуляционная гимнастика',    img:'peshchera', link:'peshchera-samocvetov-97d60c.ppsx'},
+  {t:'Мемо: найди пару',    s:'Артикуляция, найди пару',       img:'memo',      link:'memo-627af2.ppsx'},
+];
+
+/* ====== дальше трогать не нужно ====== */
+const IMG = {"planet": "planet-play", "cave": "cave-play", "snow": "snow-cover", "lake": "lake-koster", "farm": "farm-play", "pegas": "pegas-play", "race": "race-play", "feya": "logos-feya-1", "memo": "logos-memo-1", "diag": "logos-diagnostika-map", "predlogi": "logos-predlogi-poster", "sad": "logos-sad-poster", "koncert": "logos-koncert-poster", "snegovik": "logos-snegovik-poster", "yeti": "yeti-2", "more": "logos-more-poster", "peshchera": "logos-peshchera-poster"};
+function pl(n,a,b,c){const x=n%10,y=n%100;if(x===1&&y!==11)return a;if(x>=2&&x<=4&&(y<12||y>14))return b;return c}
+function card(g, isFile){
+  let btn;
+  if (!isFile) {
+    btn = g.link
+      ? `<a class="act play" href="${g.link}" target="_blank" rel="noopener">▶ Играть</a><div class="linkrow"><input class="linktxt" readonly value="${g.link}" aria-label="Ссылка на игру"><button type="button" class="copy" data-link="${g.link}">Копировать</button></div>`
+      : `<span class="act off">Ссылка скоро появится</span>`;
+  } else if (g.link) {
+    btn = `<a class="act dl" href="${g.link}" target="_blank" rel="noopener">⬇ Скачать</a>`;
+  } else {
+    btn = `<span class="act off">✈ Пришлю в Telegram</span>`;
+  }
+  return `<article class="card">
+    <div class="cover"><img src="https://polliafan-prog.github.io/games/${IMG[g.img]}.webp" alt="${g.t}" loading="lazy">
+      <div class="badges"><span class="badge">${isFile?'📎 Файл':'🔗 Ссылка'}</span>${g.gift?'<span class="badge gift">🎁 Подарок</span>':''}</div>
+    </div>
+    <div class="card-body"><h3>${g.t}</h3><div class="sub">${g.s}</div><div class="fmt">${isFile?'Файл PowerPoint':'Онлайн-игра по ссылке'}</div></div>
+    <div class="card-foot">${btn}</div>
+  </article>`;
+}
+document.getElementById('online').innerHTML = ONLINE.map(g=>card(g,false)).join('');
+document.getElementById('files').innerHTML  = FILES.map(g=>card(g,true)).join('');
+document.getElementById('cnt').textContent = ONLINE.length + FILES.length;
+document.getElementById('cntOnline').textContent = ONLINE.length + ' ' + pl(ONLINE.length,'ссылка','ссылки','ссылок');
+document.getElementById('cntFiles').textContent = FILES.length + ' ' + pl(FILES.length,'файл','файла','файлов');
+if (ALL_FILES_FOLDER) document.getElementById('allbtn').href = ALL_FILES_FOLDER;
+else document.getElementById('allbox').style.display = 'none';
+
+const end = new Date(UNTIL);
+const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+const local = new Date(end.getTime() + 7*3600e3);
+document.getElementById('until').textContent = local.getUTCDate() + ' ' + months[local.getUTCMonth()];
+function plural(n){const a=n%10,b=n%100;if(a===1&&b!==11)return'день';if(a>=2&&a<=4&&(b<12||b>14))return'дня';return'дней'}
+function tick(){
+  const ms = end - Date.now();
+  if (ms <= 0){ document.body.classList.add('is-expired'); return; }
+  const d = Math.ceil(ms/86400e3);
+  document.getElementById('left').textContent = d;
+  document.getElementById('leftWord').textContent = plural(d);
+}
+tick(); setInterval(tick, 60000);
+document.addEventListener('click', async e => {
+  const b = e.target.closest('.copy'); if (!b) return;
+  const inp = b.previousElementSibling;
+  let ok = false;
+  try { await navigator.clipboard.writeText(b.dataset.link); ok = true; } catch(_) {}
+  if (!ok) { try { inp.focus(); inp.select(); ok = document.execCommand('copy'); } catch(_) {} }
+  if (!ok) { inp.focus(); inp.select(); }
+  b.textContent = ok ? 'Скопировано ✓' : 'Выделено'; b.classList.add('done');
+  setTimeout(() => { b.textContent = 'Копировать'; b.classList.remove('done'); }, 1800);
+});
+document.addEventListener('focusin', e => { if (e.target.classList.contains('linktxt')) e.target.select(); });
+</script>
+</body>
+</html>
